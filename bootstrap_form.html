@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part 2: Bootstrap Form</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light p-4">
+    <div class="container bg-white p-4 rounded shadow-sm" style="max-width: 600px;">
+        <h2 class="mb-4">Task 2 & 3: Bootstrap Contact Form with Validation</h2>
+        
+        <!-- Standard Bootstrap validation requires 'needs-validation' class and 'novalidate' attribute -->
+        <form class="needs-validation" novalidate>
+            <div class="mb-3">
+                <label for="bsName" class="form-label">Name</label>
+                <input type="text" class="form-control" id="bsName" placeholder="Enter your full name" required minlength="2">
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please enter your name (at least 2 characters).</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="bsEmail" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="bsEmail" placeholder="name@example.com" required>
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Email is required and must follow a valid email format.</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="bsMessage" class="form-label">Message</label>
+                <textarea class="form-control" id="bsMessage" rows="3" placeholder="Write your message here..." required minlength="10"></textarea>
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please type a message of at least 10 characters.</div>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Submit Form</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap Validation Script -->
+    <script>
+        (() => {
+            'use strict'
+            const forms = document.querySelectorAll('.needs-validation')
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
+</body>
+</html>

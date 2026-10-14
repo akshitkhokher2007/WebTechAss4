@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part 1: Basic HTML Form</title>
+</head>
+<body>
+    <h1>Assignment 4 - Part 1: Basic HTML Form</h1>
+    <!-- Task 0 & Task 1: Simple Contact Form with HTML5 Validation -->
+    <form action="#" method="POST">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required minlength="2" maxlength="50">
+        </div>
+        <br>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <br>
+        <div>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required minlength="10" maxlength="500"></textarea>
+        </div>
+        <br>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</body>
+</html>
